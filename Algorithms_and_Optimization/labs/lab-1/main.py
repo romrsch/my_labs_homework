@@ -6,15 +6,15 @@ class Fraction:
     """
     Класс, реализующий дроби
     """
-    __slots__ = ('_numerator', '_denominator')
+    __slots__ = ('_numerator', '_denominator')  #числитель, знаменатель
 
     def __init__(self, numerator=0, denominator=1):
         if type(numerator) is not int or type(denominator) is not int:
             raise TypeError(
-                'Fraction(%s, %s) - the numerator and denominator values must be integers' % (numerator, denominator))
+                'Fraction(%s, %s) - значения числителя и знаменателя должны быть целыми числами' % (numerator, denominator))
         if denominator == 0:
             raise ZeroDivisionError('Fraction(%s, 0)' % numerator)
-        g = math.gcd(numerator, denominator)
+        g = math.gcd(numerator, denominator) # наибольший общий делитель двух чисел
         if denominator < 0:
             g = -g
         numerator //= g
@@ -99,7 +99,8 @@ class Fraction:
             return '%s/%s' % (self._numerator, self._denominator)
 
     def get_abs(self):
-        return Fraction(abs(self._numerator), abs(self._denominator))
+        """Возвращает абсолютное значение аргумента"""
+        return Fraction(abs(self._numerator), abs(self._denominator)) 
 
 
 def print_matrix(matrix):

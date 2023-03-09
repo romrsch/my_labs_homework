@@ -1,6 +1,7 @@
-cost = []
-demand = []
-supply = []
+cost = []    #Стоимость
+demand = []  #Спрос
+supply = []  #Поставка
+
 file = [list(map(int, line.split())) for line in open(r"C:\labs\lab3-2\input.txt")]
 for line in range(len(file)):
     if line < len(file) - 2:
@@ -12,8 +13,8 @@ for line in range(len(file)):
 
 r = len(supply)
 c = len(demand)
-total_requirement = 0
-total_availability = 0
+total_requirement = 0  # Общая потребность
+total_availability = 0  # Общая доступность
 
 
 def column(matrix, col):
